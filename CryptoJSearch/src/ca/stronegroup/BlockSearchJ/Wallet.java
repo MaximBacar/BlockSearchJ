@@ -1,7 +1,7 @@
 package ca.stronegroup.BlockSearchJ;
 
 /**
- * The Wallet class allows to access any wallet on the blockchain
+ * The Wallet class allows access any wallet on the blockchain
  * Uses Blockchain.com Explorer (NO API REQUIRED)
  * 
  * Copyright (C) 2022 Strone Group

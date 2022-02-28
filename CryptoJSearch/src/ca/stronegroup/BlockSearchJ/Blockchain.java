@@ -10,6 +10,7 @@ import java.net.http.HttpResponse;
  * The Blockchain class allows to explore the blockchain
  * Uses Blockchain.com Explorer (NO API REQUIRED)
  * 
+ * 
  * Copyright (C) 2022 Strone Group
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");

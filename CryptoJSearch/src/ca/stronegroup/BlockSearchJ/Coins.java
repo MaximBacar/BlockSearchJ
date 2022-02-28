@@ -2,7 +2,7 @@ package ca.stronegroup.BlockSearchJ;
 
 /**
  * All the currencies supported by Blockchain.com's explorer
- * 
+ * ETH/BTC
  * 
  * Copyright (C) 2022 Strone Group
  * 
