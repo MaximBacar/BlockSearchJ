@@ -1,6 +1,6 @@
 # BlockSearchJ
 
-BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the BIP44, BIP49 and BIP84 addresses and to get the associated BTC balance with Blochain.info API. It allows a simple and fast lookup of a specific mnemonic phrase. 
+BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the BIP44, BIP49 and BIP84 addresses and to get the associated BTC balance with Blochain.info API.
 
 ### Technologies
 * [BitcoinJ](https://github.com/bitcoinj/bitcoinj#getting-started) - for bitcoin algorithms
@@ -14,37 +14,38 @@ To get started, download [BlockSearchJ's Jar file](https://github.com/MaximBacar
 
 #### Creating a Wallet from a 12 word mnemonic phrase
 
-```
+```java
 Wallet myWallet = new Wallet("word word word word word word word word word word word word");
 ```
 #### Creating a Wallet from a BIP39 entropy
-```
+```java
 Wallet myWallet = new Wallet(new BigInteger("00"),2);
 ```
 #### Creating a Random Wallet
-```
+```java
 Wallet myWallet = new Wallet();
 ```
 
 #### Get Wallet Informations
-```
-myWallet.getMnemonic().getPhrase()      //  Get wallet's 12 word mnemonic phrase
-myWallet.getMnemonic().getEntropy()     //  Get wallet's binary entropy
-myWallet.getMnemonic().getSeed()        //  Get wallet's BIP39 seed
-myWallet.getMnemonic().getMasterKeys()  //  Get wallet's master keys (public and private)
+```java
+String phrase = myWallet.getMnemonic().getPhrase()    //  Get wallet's 12 word mnemonic phrase
+String entropy = myWallet.getMnemonic().getEntropy()  //  Get wallet's binary entropy
+String seed = myWallet.getMnemonic().getSeed()        //  Get wallet's BIP39 seed
+Key keys = myWallet.getMnemonic().getMasterKeys()     //  Get wallet's master keys (public and private)
 
-myWallet.changeAddressFormat(AddressFormat.BIP84);     //  Change wallet's address format to BIP84
-myWallet.getAddress()                   // Get wallet's BIP84 first address
-myWallet.changeAddressFormat(AddressFormat.BIP49);     //  Change wallet's address format to BIP49
-myWallet.getAddress()                   // Get wallet's BIP49 first address
-myWallet.changeAddressFormat(AddressFormat.BIP44);     //  Change wallet's address format to BIP44
-myWallet.getAddress()                   // Get wallet's BIP44 first address
+String address;
+myWallet.changeAddressFormat(AddressFormat.BIP84);    //  Change wallet's address format to BIP84
+address = myWallet.getAddress()                   // Get wallet's BIP84 first address
+myWallet.changeAddressFormat(AddressFormat.BIP49);    //  Change wallet's address format to BIP49
+address = myWallet.getAddress()                   // Get wallet's BIP49 first address
+myWallet.changeAddressFormat(AddressFormat.BIP44);    //  Change wallet's address format to BIP44
+address = myWallet.getAddress()                   // Get wallet's BIP44 first address
 
-myWallet.getBalance()                   //  Get wallet's balance of the first address of the selected address format
+double balance = myWallet.getBalance()                //  Get wallet's balance of the first address of the selected address format
 
 ```
 #### Get Public Key of a Specific Key Derivation
-```
+```java
 //  Get the public key of m/84'/0'/0'/0/1 and generate it's address
 String publicKey = myWallet.getMnemonic().getMasterKeys().derivateKeys("m/84'/0'/0'/0/1").getPublicKey();
 Algorithms.generateAddress(publicKey, AddressFormat.BIP84);
@@ -57,12 +58,12 @@ Algorithms.generateAddress(publicKey, AddressFormat.BIP44);
 ### Explorer Example Code
 
 #### Get the Balance of a Bitcoin Address
-```
-Blockchain.getBalance("address")        //  Get the balance in BTC of an address
+```java
+double balance = Blockchain.getBalance("address")        //  Get the balance in BTC of an address
 ```
 
 #### Convert BTC to Another Currency
-```
-Blockchain.btcToCurrency(0.34, "usd")   //  Convert 0.34BTC to USD
-Blockchain.btcToCurrency(2, "cad")   //  Convert 2BTC to CAD
+```java
+double balanceUsd =Blockchain.btcToCurrency(0.34, "usd") //  Convert 0.34BTC to USD
+double balanceCad = Blockchain.btcToCurrency(2, "cad")   //  Convert 2BTC to CAD
 ```
