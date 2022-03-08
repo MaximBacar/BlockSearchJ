@@ -1,6 +1,6 @@
 # BlockSearchJ
 
-BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the BIP44, BIP49 and BIP84 addresses and to get the associated BTC balance with Blochain.info API. The library is only meant to access existing wallets and NOT to create ones.
+BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase or entropy, the BIP44, BIP49 and BIP84 addresses and get the associated Bitcoin balance using the Blochain.info API. The library is only meant to access wallets and get their basic informations, NOT to manage transactions.
 
 ### Technologies
 * [BitcoinJ](https://github.com/bitcoinj/bitcoinj#getting-started) - for bitcoin algorithms
