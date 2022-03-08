@@ -1,6 +1,6 @@
 # BlockSearchJ
 
-BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the Bip44, Bip49 and Bip84 addresses aswell as get the associate wallet balance using Blockchain.info API.
+BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the BIP44, BIP49 and BIP84 addresses and to get the associated BTC balance with Blochain.info API. It allows a simple and fast lookup of a specific mnemonic phrase. 
 
 ### Technologies
 * [BitcoinJ](https://github.com/bitcoinj/bitcoinj#getting-started) - for bitcoin algorithms
@@ -9,8 +9,6 @@ BlockSearchJ is a simple Java library that allows to easily generate from a 12 w
 ### Download
 
 To get started, download [BlockSearchJ's Jar file](https://github.com/MaximBacar/BlockSearchJ/blob/master/BlockSearchJ.jar?raw=true) and add it to your Java Project Build Path.
-
-
 
 ### Wallet Example Code
 
@@ -44,6 +42,16 @@ myWallet.getAddress()                   // Get wallet's BIP44 first address
 
 myWallet.getBalance()                   //  Get wallet's balance of the first address of the selected address format
 
+```
+#### Get Public Key of a Specific Key Derivation
+```
+//  Get the public key of m/84'/0'/0'/0/1 and generate it's address
+String publicKey = myWallet.getMnemonic().getMasterKeys().derivateKeys("m/84'/0'/0'/0/1").getPublicKey();
+Algorithms.generateAddress(publicKey, AddressFormat.BIP84);
+
+//  Get the public key of the first BIP44 key (m/44'/0'/0'/0/0) and generate it's address
+String publicKey = myWallet.getMnemonic().getMasterKeys().derivateFirstKey(AddressFormat.BIP44).getPublicKey();
+Algorithms.generateAddress(publicKey, AddressFormat.BIP44);
 ```
 
 ### Explorer Example Code
