@@ -1,4 +1,4 @@
-### Welcome to BlockSearchJ
+# BlockSearchJ
 
 BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the Bip44, Bip49 and Bip84 addresses aswell as get the associate wallet balance using Blockchain.info API.
 
@@ -18,17 +18,17 @@ To get started, download [BlockSearchJ's Jar file](https://github.com/MaximBacar
 
 ```
 Wallet myWallet = new Wallet("word word word word word word word word word word word word");
-
 ```
 #### Creating a Wallet from a BIP39 entropy
-
 ```
 Wallet myWallet = new Wallet(new BigInteger("00"),2);
-
+```
+#### Creating a Random Wallet
+```
+Wallet myWallet = new Wallet();
 ```
 
 #### Get Wallet Informations
-
 ```
 myWallet.getMnemonic().getPhrase()      //  Get wallet's 12 word mnemonic phrase
 myWallet.getMnemonic().getEntropy()     //  Get wallet's binary entropy
@@ -46,12 +46,15 @@ myWallet.getBalance()                   //  Get wallet's balance of the first ad
 
 ```
 
-#### Blockchain explorer
+### Explorer Example Code
 
+#### Get the Balance of a Bitcoin Address
 ```
 Blockchain.getBalance("address")        //  Get the balance in BTC of an address
+```
 
-//  Convert a BTC ammount to another currency
+#### Convert BTC to Another Currency
+```
 Blockchain.btcToCurrency(0.34, "usd")   //  Convert 0.34BTC to USD
-
+Blockchain.btcToCurrency(2, "cad")   //  Convert 2BTC to CAD
 ```
