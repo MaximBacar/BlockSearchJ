@@ -1,6 +1,6 @@
 # BlockSearchJ
 
-BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the BIP44, BIP49 and BIP84 addresses and to get the associated BTC balance with Blochain.info API.
+BlockSearchJ is a simple Java library that allows to easily generate from a 12 word mnemonic phrase, the BIP44, BIP49 and BIP84 addresses and to get the associated BTC balance with Blochain.info API. The library is only meant to access existing wallets and NOT to create ones.
 
 ### Technologies
 * [BitcoinJ](https://github.com/bitcoinj/bitcoinj#getting-started) - for bitcoin algorithms
@@ -12,17 +12,18 @@ To get started, download [BlockSearchJ's Jar file](https://github.com/MaximBacar
 
 ### Wallet Example Code
 
-#### Creating a Wallet from a 12 word mnemonic phrase
+#### Creating a Wallet object from a 12 word mnemonic phrase
 
 ```java
 Wallet myWallet = new Wallet("word word word word word word word word word word word word");
 ```
-#### Creating a Wallet from a BIP39 entropy
+#### Creating a Wallet object from a BIP39 entropy
 ```java
 Wallet myWallet = new Wallet(new BigInteger("00"),2);
 ```
-#### Creating a Random Wallet
+#### Creating a Random Wallet object
 ```java
+//  Only meant for test purposes, doesn't generate a real Bitcoin wallet
 Wallet myWallet = new Wallet();
 ```
 
@@ -64,6 +65,6 @@ double balance = Blockchain.getBalance("address")        //  Get the balance in 
 
 #### Convert BTC to Another Currency
 ```java
-double balanceUsd =Blockchain.btcToCurrency(0.34, "usd") //  Convert 0.34BTC to USD
+double balanceUsd = Blockchain.btcToCurrency(0.34, "usd") //  Convert 0.34BTC to USD
 double balanceCad = Blockchain.btcToCurrency(2, "cad")   //  Convert 2BTC to CAD
 ```
