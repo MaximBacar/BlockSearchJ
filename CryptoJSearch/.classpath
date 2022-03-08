@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Downloads/libs/bcprov-jdk15on-170.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Downloads/libs/bip39_2.12-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Downloads/libs/bitcoinj-core-0.16 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Downloads/libs/slf4j-api-1.7.36.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Downloads/libs/slf4j-simple-1.7.36.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Desktop/selenium/lib/guava-31.0.1-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maxim/Downloads/graal/jjk/crypto-3.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
